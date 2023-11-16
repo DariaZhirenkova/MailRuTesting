@@ -9,13 +9,14 @@ namespace MailRuTesting
     {
         IWebDriver _driver;
         WebDriverWait _wait;
+        ILogger _logger;
 
-
-
+        const string MESSAGE_INFO = "The message was sent with text: ";
+        const string MESSAGE_TO_WAIT = "U need to wait";
         public BasePage(IWebDriver _wdriver)
         {
             _driver = _wdriver;
-          
+            _logger = LoggerManager.GetLoggerInstance();
             _driver.Manage().Window.Maximize();
             _wait = new WebDriverWait(_wdriver, TimeSpan.FromSeconds(10));
         }
@@ -39,6 +40,7 @@ namespace MailRuTesting
             var el = GetElementByXPath(xPath);
             Thread.Sleep(1000);
             el.SendKeys(info);
+
         }
 
         public void SwitchToFrame(string xpath)
@@ -56,7 +58,15 @@ namespace MailRuTesting
 
         public bool IsElementVisible(User user)//?
         {
-           return GetElementByXPath($"(//span[contains(@title,'{user.name}')])[1]/ancestor::div[3]").Displayed;           
+            if (GetElementByXPath($"(//span[contains(@title,'{user.name}')])[1]/ancestor::div[3]").Displayed)
+            {
+                return true;
+            }
+            else 
+            {
+                _logger.LogInfo(MESSAGE_TO_WAIT);
+                return false;
+            }
         }
       
     }

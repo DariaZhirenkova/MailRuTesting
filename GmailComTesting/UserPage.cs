@@ -1,10 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
+using OpenQA.Selenium;
 
 namespace MailRuTesting
 {
     public class UserPage : BasePage
     {
 
+        ILogger _logger = LoggerManager.GetLoggerInstance();//???
+
+        const string MESSAGE_INFO = "The message was sent with text: ";
         const string BUTTON_WRITE_MESSAGE = "//*[@data-title-shortcut='N']";
         const string INPUT_FORWHOM_SEND_MESSAGE = "//*[@class = 'container--ItIg4 size_s--2eBQT size_s--3_M-_']/div/input";
         const string INPUT_MESSAGE = "//*[@role = 'textbox']";
@@ -44,12 +48,15 @@ namespace MailRuTesting
             ChooseRecipient(BUTTON_WRITE_MESSAGE, INPUT_FORWHOM_SEND_MESSAGE,user.fullEmail);
             ChooseSubject(SUBJECT_INPUT_NAME, subjectName);
             WriteMessage(INPUT_MESSAGE, BUTTON_SEND_MESSAGE, message);
+
+            _logger.LogInfo(MESSAGE_INFO+message);
         }
 
         public void ReplyMessage(string info)
         {
             ClickMenuPoint(BUTTON_REPLY);
             WriteMessage(INPUT_MESSAGE, BUTTON_SEND_MESSAGE, info);
+            _logger.LogInfo(MESSAGE_INFO + info);
         }
 
         public void Exit()
