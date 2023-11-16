@@ -1,0 +1,3 @@
+The message was sent with text: hi, Dasha, how are u?
+The message was sent with text: fine, and u?
+

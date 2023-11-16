@@ -10,7 +10,7 @@ namespace MailRuTesting
     {
         public static ILogger GetLoggerInstance()
         {
-            return new TextLogger("D:\\loggerMail.txt");
+            return new TextLogger("C:\\Users\\Zhire\\source\\repos\\MailRuTesting\\loggerMail.txt");
         }
     }
 }
