@@ -1,47 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GmailComTesting
+﻿namespace MailRuTesting
 {
-    public class User
+    public class User//??
     {
-        private string _login { get; set; }
+        // private string _login;
+        public string login { get; set; }
 
-        public string login {  get
-            { return _login; }
-            }
-        private string _password { get; set; }
 
-        public string password
-        {
-            get
-            { return _password; }
-        }
-        private string _endOfEmail { get; set; }
+        //private string _password;
+        public string password { get; set; }
 
-        public string email
-        {
-            get
-            { return _endOfEmail; }
-        }
-        private string _name;
-        public string name
-        {
-            get
-            { return _name; }
-        }
 
-        public User(string login,string password,string endOfEmail,string name)
+
+        // private string _endOfEmail;
+        public string endOfEmail { get; set; } 
+
+
+        //private string _name;
+        public string name { get; set; }
+
+
+        //private string _fullEmail;
+        public string fullEmail { get; set; }
+
+        public User(string fullEmail, string login, string password, string endOfEmail, string name)
         {
-            _login = login;
-            _password = password;
-            _endOfEmail = endOfEmail;
-            _name = name;
+            this.login = login;
+            this.password = password;
+            this.endOfEmail = endOfEmail;
+            this.name = name;
+            this.fullEmail = fullEmail;
         }
+    }
 
       
-    }
+    
 }

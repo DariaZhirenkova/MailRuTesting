@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GmailComTesting", "GmailComTesting\GmailComTesting.csproj", "{D4FC7545-7F67-4DBD-8AE8-5647D83FCB1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailRuTesting", "GmailComTesting\MailRuTesting.csproj", "{D4FC7545-7F67-4DBD-8AE8-5647D83FCB1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestGmail", "TestGmail\TestGmail.csproj", "{6CBEA6BF-F168-4F7A-80E7-ADE0F45BD188}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailTest", "MailTest\MailTest.csproj", "{77C8A2F0-C454-4A05-B7F1-DE1CEB69FDF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailTest", "MailTest\MailTest.csproj", "{77C8A2F0-C454-4A05-B7F1-DE1CEB69FDF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{D4FC7545-7F67-4DBD-8AE8-5647D83FCB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4FC7545-7F67-4DBD-8AE8-5647D83FCB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4FC7545-7F67-4DBD-8AE8-5647D83FCB1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CBEA6BF-F168-4F7A-80E7-ADE0F45BD188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CBEA6BF-F168-4F7A-80E7-ADE0F45BD188}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CBEA6BF-F168-4F7A-80E7-ADE0F45BD188}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CBEA6BF-F168-4F7A-80E7-ADE0F45BD188}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77C8A2F0-C454-4A05-B7F1-DE1CEB69FDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77C8A2F0-C454-4A05-B7F1-DE1CEB69FDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C8A2F0-C454-4A05-B7F1-DE1CEB69FDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU

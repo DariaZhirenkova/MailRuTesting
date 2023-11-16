@@ -1,7 +1,5 @@
-using GmailComTesting;
-using OpenQA.Selenium.Support.UI;
+using MailRuTesting;
 using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Chrome;
 
 namespace MailTest
@@ -14,22 +12,24 @@ namespace MailTest
         User firstUser;
         User secondUser;
 
+        
+
         [SetUp]
         public void Setup()
         {
             _driver = new ChromeDriver();
             page = new MainPage(_driver);
             userPage = new UserPage(_driver);
-            firstUser = new("zhirenkovad", "Meshokgovna19", "//*[text()='@inbox.ru']","Даша Жиренкова");
-            secondUser = new("daria12345678", "qwerty30062003", "//*[text()='@internet.ru']", "Даша Иванова");
+            firstUser = new("zhirenkovad@inbox.ru","zhirenkovad", "Meshokgovna19", "//*[text()='@inbox.ru']","Даша Жиренкова");
+            secondUser = new("daria12345678@internet.ru", "daria12345678", "qwerty30062003", "//*[text()='@internet.ru']", "Даша Иванова");
 
         }
 
         [Test]
-        public void Test1()
+        public void MailRuTest()
         {
             page.Login(firstUser);
-            userPage.SendMessage("first try","hi, Dasha");
+            userPage.SendMessage("first try","hi, Dasha",secondUser);
             userPage.Exit();
 
             page.Login(secondUser);
@@ -56,8 +56,9 @@ namespace MailTest
             }
             var text = userPage.Check(secondUser);
             Assert.IsTrue(text.Contains("fine"));
-            
+          
         }
+        [TearDown]
         public static void Cleanup()
         {
             // Закрытие и освобождение ресурсов веб-драйвера здесь

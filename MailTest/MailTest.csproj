@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GmailComTesting\GmailComTesting.csproj" />
+    <ProjectReference Include="..\GmailComTesting\MailRuTesting.csproj" />
   </ItemGroup>
 
 </Project>

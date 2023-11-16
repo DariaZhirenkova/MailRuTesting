@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.DevTools.V117.FedCm;
 using OpenQA.Selenium.Edge;
 
-namespace GmailComTesting
+namespace MailRuTesting
 {
     internal class Program
     {

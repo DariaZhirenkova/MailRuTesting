@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace GmailComTesting
+namespace MailRuTesting
 {
     public class UserPage : BasePage
     {
@@ -9,8 +9,6 @@ namespace GmailComTesting
         const string INPUT_FORWHOM_SEND_MESSAGE = "//*[@class = 'container--ItIg4 size_s--2eBQT size_s--3_M-_']/div/input";
         const string INPUT_MESSAGE = "//*[@role = 'textbox']";
         const string BUTTON_SEND_MESSAGE = "//*[@tabindex='570']";
-        const string LOGIN_NAME_FIRST_PERSON = "zhirenkovad@inbox.ru";
-        const string LOGIN_NAME_SECOND_PERSON = "daria12345678@internet.ru";
         const string SUBJECT_INPUT_NAME = "//*[@name='Subject']";
 
         const string BUTTON_REPLY = "(//div[@class='button2__txt' and text()='Ответить'])[1]";
@@ -19,7 +17,6 @@ namespace GmailComTesting
         const string ICON_TO_EXIT = "//*[@class='ph-auth svelte-1osmzf1']";
         const string BUTTON_EXIT = "//*[@data-testid='whiteline-account-exit']";
 
-        const string MESSAGE_FOR_SECOND_PERSON = "hi daria.How are you?";
         public UserPage(IWebDriver _wdriver) : base(_wdriver)
         {
         }
@@ -42,9 +39,9 @@ namespace GmailComTesting
             ClickMenuPoint(xPathButton);
         }
 
-        public void SendMessage(string subjectName,string message)
+        public void SendMessage(string subjectName,string message,User user)
         {
-            ChooseRecipient(BUTTON_WRITE_MESSAGE, INPUT_FORWHOM_SEND_MESSAGE,LOGIN_NAME_SECOND_PERSON);
+            ChooseRecipient(BUTTON_WRITE_MESSAGE, INPUT_FORWHOM_SEND_MESSAGE,user.fullEmail);
             ChooseSubject(SUBJECT_INPUT_NAME, subjectName);
             WriteMessage(INPUT_MESSAGE, BUTTON_SEND_MESSAGE, message);
         }
@@ -65,14 +62,10 @@ namespace GmailComTesting
 
         public string Check(User user)
         {
-            ClickMenuPoint($"(//span[contains(@title,'{user.name}')])[1]/ancestor::div[3]");
+            ClickMenuPoint($"(//span[contains(@title,'{user.name}')])[1]/ancestor::div[3]");//???
             var test1 = GetElementByXPath(CHECK_MESSAGE).Text;
             return test1;
         }
-        
-       
-
-        //*[@title="Закрыть"]
 
     }
 }

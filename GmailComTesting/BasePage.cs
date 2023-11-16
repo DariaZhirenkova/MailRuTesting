@@ -1,11 +1,9 @@
 ﻿using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using OpenQA.Selenium.Chrome;
-using System;
 using OpenQA.Selenium.Interactions;
 
-namespace GmailComTesting
+namespace MailRuTesting
 {
     public abstract class BasePage
     {
@@ -56,7 +54,7 @@ namespace GmailComTesting
         }
 
 
-        public bool IsElementVisible(User user)
+        public bool IsElementVisible(User user)//?
         {
            return GetElementByXPath($"(//span[contains(@title,'{user.name}')])[1]/ancestor::div[3]").Displayed;           
         }
