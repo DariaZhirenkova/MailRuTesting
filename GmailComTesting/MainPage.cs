@@ -33,7 +33,7 @@ namespace MailRuTesting
             SwitchToFrame(FRAME_LOGIN_NAME);
             ClickMenuPoint(SELECT_LIST);
 
-            ClickMenuPoint(user.email);
+            ClickMenuPoint(user.endOfEmail);
             AutorizedLoginAndPassword(user.login, LOGIN_INPUT_BOX, LOGIN_BUTTON_NEXT);
             AutorizedLoginAndPassword(user.password, PASSWORD_INPUT_BOX, PASSWORD_BUTTON_NEXT);
          

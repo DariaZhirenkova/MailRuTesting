@@ -20,7 +20,7 @@ namespace MailTest
             _driver = new ChromeDriver();
             page = new MainPage(_driver);
             userPage = new UserPage(_driver);
-            firstUser = new("zhirenkovad@inbox.ru","zhirenkovad", "Meshokgovna19", "//*[text()='@inbox.ru']","Даша Жиренкова");
+            firstUser = new("pasha-pashkin94@list.ru", "pasha-pashkin94", "pashkathebest1", "//*[text()='@list.ru']","Паша Пашкин");
             secondUser = new("daria12345678@internet.ru", "daria12345678", "qwerty30062003", "//*[text()='@internet.ru']", "Даша Иванова");
 
         }
@@ -29,7 +29,7 @@ namespace MailTest
         public void MailRuTest()
         {
             page.Login(firstUser);
-            userPage.SendMessage("first try","hi, Dasha",secondUser);
+            userPage.SendMessage("first try","hi, Dasha, how are u?",secondUser);
             userPage.Exit();
 
             page.Login(secondUser);
